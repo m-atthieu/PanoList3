@@ -15,5 +15,8 @@
 @property IBOutlet IKImageBrowserView* browserView;
 
 - (IBAction) refresh: (id) sender;
-
+- (IBAction) filterFinalized: (id) sender;
+- (IBAction) filterAssembled: (id) sender;
+- (IBAction) filterNothingDone: (id) sender;
+- (IBAction) filterAll: (id) sender;
 @end

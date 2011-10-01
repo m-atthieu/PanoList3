@@ -10,7 +10,7 @@
 require 'find'
 
 class Gatherer
-    attr_accessor :path, :groups
+    attr_accessor :path, :groups, :current
     
     def initialize(path)
         @path = path
@@ -29,37 +29,42 @@ class Gatherer
                     if entry != '.' and entry != '..' and File.directory?(path) then
                         pg = PanoramaGroup.new path
                         pg.collect
-                        groups.push pg
+                        @groups.push pg
                     end
                 end
             end
         end
+        @current = @groups
     end
     
     def _to_s
         return "#{@groups.length} groups :\n#{@groups}"
     end
     
-    def finalized
-        groups.select{ |item| item.rendered? }
+    def filterFinalized
+        @current = @groups.select{ |item| item.rendered? }
     end
     
-    def present
-        groups.select{ |item| item.assembled? and ! item.rendered? }
+    def filterPresent
+        @current = @groups.select{ |item| item.assembled? and ! item.rendered? }
     end
     
-    def nothing
-        groups.select{ |item| (! item.assembled?) and (! item.rendered?) }
+    def filterNothing
+        @current = @groups.select{ |item| (! item.assembled?) and (! item.rendered?) }
+    end
+    
+    def filterAll
+        @current = @groups
     end
     
     # IKImageBrowserDatasource - required    
     def imageBrowser(aBrowser, itemAtIndex:  index)
-        return @groups[index]
+        return @current[index]
     end
     
     def numberOfItemsInImageBrowser(aBrowser)
-        NSLog "numberOfItemsInImageBrowser : #{@groups.length}"
-        return @groups.length
+        NSLog "numberOfItemsInImageBrowser : #{@current.length}"
+        return @current.length
     end
 
     # IKImageBrowserDatasource - optional
