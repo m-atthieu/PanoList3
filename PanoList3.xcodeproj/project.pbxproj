@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4383C260141AABBC000853EA /* Gatherer.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4383C25F141AABBC000853EA /* Gatherer.rb */; };
 		4385A2FA1419F25B00768301 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4385A2F91419F25B00768301 /* Cocoa.framework */; };
 		4385A2FC1419F25B00768301 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4385A2FB1419F25B00768301 /* MacRuby.framework */; };
 		4385A3031419F25B00768301 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4385A3011419F25B00768301 /* InfoPlist.strings */; };
@@ -14,19 +15,27 @@
 		4385A30A1419F25B00768301 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4385A3081419F25B00768301 /* MainMenu.xib */; };
 		4385A30D1419F25B00768301 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4385A30C1419F25B00768301 /* rb_main.rb */; };
 		4385A30F1419F25C00768301 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4385A30E1419F25B00768301 /* AppDelegate.rb */; };
+		43CDE120141AB32700BEB8C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CDE11F141AB32700BEB8C6 /* AppDelegate.m */; };
+		43D49278141B5ED2004C465E /* PanoramaGroup.rb in Resources */ = {isa = PBXBuildFile; fileRef = 43D49277141B5ED2004C465E /* PanoramaGroup.rb */; };
+		43D4927B141B5EE8004C465E /* Panorama.rb in Resources */ = {isa = PBXBuildFile; fileRef = 43D4927A141B5EE8004C465E /* Panorama.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4383C25F141AABBC000853EA /* Gatherer.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Gatherer.rb; sourceTree = "<group>"; };
 		4385A2F51419F25B00768301 /* PanoList3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanoList3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4385A2F91419F25B00768301 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4385A2FB1419F25B00768301 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = DEVELOPER_DIR; };
-		4385A3001419F25B00768301 /* PanoList3-Info.plist */ = {isa = PBXFileReference; path = "PanoList3-Info.plist"; sourceTree = "<group>"; };
+		4385A3001419F25B00768301 /* PanoList3-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PanoList3-Info.plist"; sourceTree = "<group>"; };
 		4385A3021419F25B00768301 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4385A3041419F25B00768301 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4385A3061419F25B00768301 /* PanoList3-Prefix.pch */ = {isa = PBXFileReference; path = "PanoList3-Prefix.pch"; sourceTree = "<group>"; };
+		4385A3061419F25B00768301 /* PanoList3-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PanoList3-Prefix.pch"; sourceTree = "<group>"; };
 		4385A3091419F25B00768301 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4385A30C1419F25B00768301 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		4385A30E1419F25B00768301 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
+		43CDE11E141AB32700BEB8C6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		43CDE11F141AB32700BEB8C6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		43D49277141B5ED2004C465E /* PanoramaGroup.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = PanoramaGroup.rb; sourceTree = "<group>"; };
+		43D4927A141B5EE8004C465E /* Panorama.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Panorama.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				4385A30E1419F25B00768301 /* AppDelegate.rb */,
+				43CDE11E141AB32700BEB8C6 /* AppDelegate.h */,
+				43CDE11F141AB32700BEB8C6 /* AppDelegate.m */,
 				4385A3071419F25B00768301 /* Resources */,
 				4385A30B1419F25B00768301 /* Other Sources */,
 				4385A2FF1419F25B00768301 /* Supporting Files */,
@@ -102,6 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				4385A30C1419F25B00768301 /* rb_main.rb */,
+				4383C25F141AABBC000853EA /* Gatherer.rb */,
+				43D4927A141B5EE8004C465E /* Panorama.rb */,
+				43D49277141B5ED2004C465E /* PanoramaGroup.rb */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -174,6 +188,9 @@
 				4385A30A1419F25B00768301 /* MainMenu.xib in Resources */,
 				4385A30D1419F25B00768301 /* rb_main.rb in Resources */,
 				4385A30F1419F25C00768301 /* AppDelegate.rb in Resources */,
+				4383C260141AABBC000853EA /* Gatherer.rb in Resources */,
+				43D49278141B5ED2004C465E /* PanoramaGroup.rb in Resources */,
+				43D4927B141B5EE8004C465E /* Panorama.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4385A3051419F25B00768301 /* main.m in Sources */,
+				43CDE120141AB32700BEB8C6 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +336,7 @@
 				4385A3141419F25C00768301 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4385A3151419F25C00768301 /* Build configuration list for PBXLegacyTarget "Deployment" */ = {
 			isa = XCConfigurationList;
@@ -326,6 +345,7 @@
 				4385A3171419F25C00768301 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
