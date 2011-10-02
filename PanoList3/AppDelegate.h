@@ -13,10 +13,12 @@
 
 @property IBOutlet NSWindow* window;
 @property IBOutlet IKImageBrowserView* browserView;
+@property IBOutlet NSSearchField* searchField;
 
 - (IBAction) refresh: (id) sender;
 - (IBAction) filterFinalized: (id) sender;
 - (IBAction) filterAssembled: (id) sender;
 - (IBAction) filterNothingDone: (id) sender;
 - (IBAction) filterAll: (id) sender;
+- (IBAction) search: (id) sender;
 @end

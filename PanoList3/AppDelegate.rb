@@ -7,7 +7,7 @@
 #
 
 class AppDelegate
-    attr_accessor :window, :browserView, :datasource
+    attr_accessor :window, :searchField, :browserView, :datasource
     
     def applicationDidFinishLaunching(a_notification)
         # Insert code here to initialize your application
@@ -50,6 +50,14 @@ class AppDelegate
     def filterAll(sender)
         @datasource.filterAll
         @browserView.reloadData
+    end
+    
+    def search(sender)
+        if(@searchField.stringValue.length != 0) then
+            @datasource.filterName @searchField.stringValue
+            @browserView.reloadData
+            NSLog("searching : #{@searchField.stringValue}")
+        end
     end
     
     # IKImageBrowserDelegate

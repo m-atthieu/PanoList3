@@ -57,6 +57,12 @@ class Gatherer
         @current = @groups
     end
     
+    def filterName pattern
+        re = Regexp.new ".*#{pattern}.*"
+        # item.name or item.path
+        @current = @groups.select{ |item| re.match item.name }
+    end
+    
     # IKImageBrowserDatasource - required    
     def imageBrowser(aBrowser, itemAtIndex:  index)
         return @current[index]
