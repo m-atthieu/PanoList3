@@ -60,7 +60,7 @@ class Gatherer
     def filterName pattern
         re = Regexp.new ".*#{pattern}.*"
         # item.name or item.path
-        @current = @groups.select{ |item| re.match item.name }
+        @current = @groups.select{ |item| re.match item.path }
     end
     
     # IKImageBrowserDatasource - required    
