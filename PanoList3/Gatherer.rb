@@ -41,6 +41,11 @@ class Gatherer
         return "#{@groups.length} groups :\n#{@groups}"
     end
     
+    # filtering
+    def resetFilter
+        @current = @groups
+    end
+    
     def filterFinalized
         @current = @groups.select{ |item| item.rendered? }
     end

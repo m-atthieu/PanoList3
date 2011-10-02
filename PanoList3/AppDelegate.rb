@@ -57,6 +57,9 @@ class AppDelegate
             @datasource.filterName @searchField.stringValue
             @browserView.reloadData
             NSLog("searching : #{@searchField.stringValue}")
+        else
+            @datasource.resetFilter
+            @browserView.reloadData
         end
     end
     
