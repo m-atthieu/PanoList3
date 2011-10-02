@@ -14,6 +14,7 @@
 @property IBOutlet NSWindow* window;
 @property IBOutlet IKImageBrowserView* browserView;
 @property IBOutlet NSSearchField* searchField;
+@property IBOutlet NSTextField* countField;
 
 - (IBAction) refresh: (id) sender;
 - (IBAction) filterFinalized: (id) sender;

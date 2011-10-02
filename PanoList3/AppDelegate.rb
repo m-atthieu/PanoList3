@@ -7,7 +7,7 @@
 #
 
 class AppDelegate
-    attr_accessor :window, :searchField, :browserView, :datasource
+    attr_accessor :window, :searchField, :countField, :browserView, :datasource
     
     def applicationDidFinishLaunching(a_notification)
         # Insert code here to initialize your application
@@ -18,7 +18,7 @@ class AppDelegate
         @datasource.collectAll
         
         @browserView.setDataSource(@datasource)
-        @browserView.reloadData
+        self.reloadData
     end
     
     def refresh(sender)
@@ -34,33 +34,39 @@ class AppDelegate
     # filters
     def filterFinalized sender
         @datasource.filterFinalized
-        @browserView.reloadData
+        self.reloadData
     end
     
     def filterAssembled(sender)
         @datasource.filterPresent
-        @browserView.reloadData
+        self.reloadData
     end
     
     def filterNothingDone(sender)
         @datasource.filterNothing
-        @browserView.reloadData
+        self.reloadData
     end
     
     def filterAll(sender)
         @datasource.filterAll
-        @browserView.reloadData
+        self.reloadData
     end
     
     def search(sender)
         if(@searchField.stringValue.length != 0) then
             @datasource.filterName @searchField.stringValue
-            @browserView.reloadData
+            self.reloadData
             NSLog("searching : #{@searchField.stringValue}")
         else
             @datasource.resetFilter
-            @browserView.reloadData
+            self.reloadData
         end
+    end
+    
+    def reloadData
+        n = @datasource.numberOfItemsInImageBrowser @browserView
+        @countField.setStringValue "#{n} panoramas"
+        @browserView.reloadData
     end
     
     # IKImageBrowserDelegate
