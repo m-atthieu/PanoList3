@@ -74,7 +74,7 @@ class Gatherer
     end
     
     def numberOfItemsInImageBrowser(aBrowser)
-        NSLog "numberOfItemsInImageBrowser : #{@current.length}"
+        #NSLog "numberOfItemsInImageBrowser : #{@current.length}"
         return @current.length
     end
 
