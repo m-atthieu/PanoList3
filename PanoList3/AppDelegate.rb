@@ -56,7 +56,7 @@ class AppDelegate
         if(@searchField.stringValue.length != 0) then
             @datasource.filterName @searchField.stringValue
             self.reloadData
-            NSLog("searching : #{@searchField.stringValue}")
+            #NSLog("searching : #{@searchField.stringValue}")
         else
             @datasource.resetFilter
             self.reloadData

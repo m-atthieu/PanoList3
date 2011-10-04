@@ -1,3 +1,4 @@
+# -*- coding: iso-8859-1 -*-
 #
 #  PanoramaGroup.rb
 #  PanoList3
@@ -7,21 +8,28 @@
 #
 
 class PanoramaGroup
-    attr_accessor :path, :panoramas, :rendering
+    attr_accessor :path, :panoramas, :rendering, :index, :images, :version
     
     def initialize(path)
         @path = path
         @panoramas = Array.new
         @rendering = ""
+        @version = 0
     end
     
     def rendered?
         r = false
         @panoramas.each { |item| r = (r or item.rendered?) }
-        #print "r #{r}\n"
-        return (@rendering.length != 0  or r)
+        return (@rendering.length != 0 or r)
     end
     
+    def render_next step
+        @index = 0 if @index.nil?
+        @index = (@index + 1).modulo(@images.length).to_i
+        @version += 1
+        NSLog "index : #{@index}"
+    end
+
     def assembled?
         return (@panoramas.length != 0)
     end
@@ -34,7 +42,7 @@ class PanoramaGroup
         basename = File.basename(@path)
         pto_regexp = Regexp.new "(.*)\.pto$", true
         final_regexp = Regexp.new "(#{basename}[^0-9]+.*\.(tif|jpg))$", true
-        entries = Dir.entries(path)
+        entries = Dir.entries(@path)
         entries.each do |entry|
             # on regarde s'il y a des pto
             if pto_regexp.match entry then
@@ -67,6 +75,17 @@ class PanoramaGroup
     # IKImageBrowserItem - required
     def imageRepresentation
         #NSLog @rendering
+        # if there is no rendering, first image ?
+        unless self.rendered?
+            if @images.nil? then
+              re = Regexp.new ".*\.(jpe?g|nef|tiff?|rw2)$", true
+              @images = Dir.entries(@path).select{ |item| re.match item }
+                @images.map!{ |item| @path + '/' + item }
+            end
+            @index = 0 if @index.nil?
+            #p @index
+            return @images[@index]
+        end
         @rendering
     end
     
@@ -76,6 +95,10 @@ class PanoramaGroup
 
     def imageUID
         @path
+    end
+    
+    def imageVersion
+        @version
     end
     
     # IKImageBrowserItem - optional

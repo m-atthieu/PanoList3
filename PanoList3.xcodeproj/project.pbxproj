@@ -15,6 +15,7 @@
 		4385A30A1419F25B00768301 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4385A3081419F25B00768301 /* MainMenu.xib */; };
 		4385A30D1419F25B00768301 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4385A30C1419F25B00768301 /* rb_main.rb */; };
 		4385A30F1419F25C00768301 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4385A30E1419F25B00768301 /* AppDelegate.rb */; };
+		439849D01439100F00D3BA53 /* ImageBrowserView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 439849CF1439100F00D3BA53 /* ImageBrowserView.rb */; };
 		43CDE120141AB32700BEB8C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CDE11F141AB32700BEB8C6 /* AppDelegate.m */; };
 		43D49278141B5ED2004C465E /* PanoramaGroup.rb in Resources */ = {isa = PBXBuildFile; fileRef = 43D49277141B5ED2004C465E /* PanoramaGroup.rb */; };
 		43D4927B141B5EE8004C465E /* Panorama.rb in Resources */ = {isa = PBXBuildFile; fileRef = 43D4927A141B5EE8004C465E /* Panorama.rb */; };
@@ -32,6 +33,7 @@
 		4385A3091419F25B00768301 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4385A30C1419F25B00768301 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		4385A30E1419F25B00768301 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
+		439849CF1439100F00D3BA53 /* ImageBrowserView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ImageBrowserView.rb; sourceTree = "<group>"; };
 		43CDE11E141AB32700BEB8C6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43CDE11F141AB32700BEB8C6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		43D49277141B5ED2004C465E /* PanoramaGroup.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = PanoramaGroup.rb; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				4385A30E1419F25B00768301 /* AppDelegate.rb */,
 				43CDE11E141AB32700BEB8C6 /* AppDelegate.h */,
 				43CDE11F141AB32700BEB8C6 /* AppDelegate.m */,
+				439849CF1439100F00D3BA53 /* ImageBrowserView.rb */,
 				4385A3071419F25B00768301 /* Resources */,
 				4385A30B1419F25B00768301 /* Other Sources */,
 				4385A2FF1419F25B00768301 /* Supporting Files */,
@@ -191,6 +194,7 @@
 				4383C260141AABBC000853EA /* Gatherer.rb in Resources */,
 				43D49278141B5ED2004C465E /* PanoramaGroup.rb in Resources */,
 				43D4927B141B5EE8004C465E /* Panorama.rb in Resources */,
+				439849D01439100F00D3BA53 /* ImageBrowserView.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
