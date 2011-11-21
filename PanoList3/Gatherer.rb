@@ -41,7 +41,8 @@ class Gatherer
         return "#{@groups.length} groups :\n#{@groups}"
     end
     
-    # filtering
+    # pragma mark -
+    # pragma mark filtering
     def resetFilter
         @current = @groups
     end
@@ -68,7 +69,8 @@ class Gatherer
         @current = @groups.select{ |item| re.match item.path }
     end
     
-    # IKImageBrowserDatasource - required    
+    # pragma mark - 
+    # pragma mark IKImageBrowserDatasource - required    
     def imageBrowser(aBrowser, itemAtIndex:  index)
         return @current[index]
     end
@@ -78,7 +80,8 @@ class Gatherer
         return @current.length
     end
 
-    # IKImageBrowserDatasource - optional
+    # pragma mark - 
+    # pragma mark IKImageBrowserDatasource - optional
     def imageBrowser(aBrowser, groupAtIndex: index)
         return nil
     end
@@ -87,7 +90,6 @@ class Gatherer
     end
     
     def imageBrowser(aBrowser, removeItemsAtIndexes: indexes)
-    
     end
     
     def numberOfGroupsInImageBrowser(aBrowser)
