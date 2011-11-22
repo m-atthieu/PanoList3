@@ -11,17 +11,17 @@ describe "Generating a new Panorama" do
     #include Panorama
     it "should return an object of class Panorama" do
         t = Panorama.new "test"
-        t.class.should.equal Panorama
+        t.class.should == Panorama
     end
     
     it "should have a name based on filename" do
         t = Panorama.new "2010/10/08/test"
-        t.filename.should.equal "2010/10/08/test"
-        t.name.should.equal "test"
+        t.filename.should == "2010/10/08/test"
+        t.name.should == "test"
     end
 
     it "should not be rendered immediatly" do
       t = Panorama.new "2010/10/08/test"
-      t.rendered?.should.be.false
+      t.rendered?.should == false
     end
 end

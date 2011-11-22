@@ -15,6 +15,7 @@
 		4385A30A1419F25B00768301 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4385A3081419F25B00768301 /* MainMenu.xib */; };
 		4385A30D1419F25B00768301 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4385A30C1419F25B00768301 /* rb_main.rb */; };
 		4385A30F1419F25C00768301 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4385A30E1419F25B00768301 /* AppDelegate.rb */; };
+		438A3AA0147C5F6600FBD1FD /* spec_helper.rb in Resources */ = {isa = PBXBuildFile; fileRef = 438A3A9F147C5F6500FBD1FD /* spec_helper.rb */; };
 		439849D01439100F00D3BA53 /* ImageBrowserView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 439849CF1439100F00D3BA53 /* ImageBrowserView.rb */; };
 		43CDE120141AB32700BEB8C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CDE11F141AB32700BEB8C6 /* AppDelegate.m */; };
 		43D49278141B5ED2004C465E /* PanoramaGroup.rb in Resources */ = {isa = PBXBuildFile; fileRef = 43D49277141B5ED2004C465E /* PanoramaGroup.rb */; };
@@ -45,9 +46,10 @@
 		4385A30E1419F25B00768301 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
 		438A3A17147A743E00FBD1FD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		438A3A19147A743E00FBD1FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		438A3A89147B269F00FBD1FD /* Gatherer_spec.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Gatherer_spec.rb; sourceTree = "<group>"; };
-		438A3A8A147B269F00FBD1FD /* Panorama_spec.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Panorama_spec.rb; sourceTree = "<group>"; };
-		438A3A8B147B282800FBD1FD /* rb_spec.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = rb_spec.rb; sourceTree = "<group>"; };
+		438A3A96147C53DA00FBD1FD /* Gatherer_spec.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = Gatherer_spec.rb; path = specs/Gatherer_spec.rb; sourceTree = SOURCE_ROOT; };
+		438A3A97147C53DA00FBD1FD /* Panorama_spec.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = Panorama_spec.rb; path = specs/Panorama_spec.rb; sourceTree = SOURCE_ROOT; };
+		438A3A98147C53DA00FBD1FD /* PanoramaGroup_spec.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = PanoramaGroup_spec.rb; path = specs/PanoramaGroup_spec.rb; sourceTree = SOURCE_ROOT; };
+		438A3A9F147C5F6500FBD1FD /* spec_helper.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = spec_helper.rb; path = specs/spec_helper.rb; sourceTree = SOURCE_ROOT; };
 		439849CF1439100F00D3BA53 /* ImageBrowserView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ImageBrowserView.rb; sourceTree = "<group>"; };
 		43CDE11E141AB32700BEB8C6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43CDE11F141AB32700BEB8C6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -152,9 +154,10 @@
 		438A3A88147B263100FBD1FD /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				438A3A89147B269F00FBD1FD /* Gatherer_spec.rb */,
-				438A3A8A147B269F00FBD1FD /* Panorama_spec.rb */,
-				438A3A8B147B282800FBD1FD /* rb_spec.rb */,
+				438A3A96147C53DA00FBD1FD /* Gatherer_spec.rb */,
+				438A3A9F147C5F6500FBD1FD /* spec_helper.rb */,
+				438A3A97147C53DA00FBD1FD /* Panorama_spec.rb */,
+				438A3A98147C53DA00FBD1FD /* PanoramaGroup_spec.rb */,
 			);
 			name = Tests;
 			path = PanoList3;
@@ -178,7 +181,7 @@
 		};
 		438A3A58147B1C7C00FBD1FD /* Test Unit */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = PanoList3/rb_spec.rb;
+			buildArgumentsString = specs/spec_helper.rb;
 			buildConfigurationList = 438A3A59147B1C7C00FBD1FD /* Build configuration list for PBXLegacyTarget "Test Unit" */;
 			buildPhases = (
 			);
@@ -251,6 +254,7 @@
 				43D49278141B5ED2004C465E /* PanoramaGroup.rb in Resources */,
 				43D4927B141B5EE8004C465E /* Panorama.rb in Resources */,
 				439849D01439100F00D3BA53 /* ImageBrowserView.rb in Resources */,
+				438A3AA0147C5F6600FBD1FD /* spec_helper.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

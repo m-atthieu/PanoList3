@@ -13,20 +13,20 @@ describe "Generating a new PanoramaGroup" do
     end
     
     it "should return an object of class PanoramaGroup" do
-        @t.class.should.equal PanoramaGroup
+        @t.class.should == PanoramaGroup
     end
     
     it "should have an empty panorama list" do
-        @t.panoramas.length.should.equal 0
+        @t.panoramas.length.should == 0
     end
     
     it "should not be rendered" do
-        @t.rendering.should.equal ""
-        @t.rendered?.should.be.false
+        @t.rendering.should == ""
+        @t.rendered?.should == false
     end
 
     it "should have a name based on filename" do
-        @t.name.should.equal "tour-eiffel"
+        @t.name.should == "tour-eiffel"
     end
 end
 
@@ -38,8 +38,8 @@ describe "PanoramaGroup with a rendered panorama with the same name" do
     end
     
     it "should have a rendering" do
-        @t.rendered?.should.be.true
-        @t.rendering.should.equal "2010/10/21/tour-eiffel/tour-eiffel.jpg"
+        @t.rendered?.should == true
+        @t.rendering.should == "2010/10/21/tour-eiffel/tour-eiffel.jpg"
     end
 end
 
@@ -51,8 +51,8 @@ describe "PanoramaGroup with a rendered panorama having a different name" do
     end
 
     it "should have a rendering" do
-        @t.rendered?.should.be.true
-        @t.rendering.should.equal "2010/10/21/tour-eiffel/tour-eiffel-cl.jpg"
+        @t.rendered?.should == true
+        @t.rendering.should == "2010/10/21/tour-eiffel/tour-eiffel-cl.jpg"
     end
 end
 
@@ -64,8 +64,8 @@ describe "PanoramaGroup with a rendered panorama having a completly different na
     end
 
     it "should have a rendering" do
-        @t.rendered?.should.be.true
-        @t.rendering.should.equal "2010/10/21/tour-eiffel/img-01-02.jpg"
+        @t.rendered?.should == true
+        @t.rendering.should == "2010/10/21/tour-eiffel/img-01-02.jpg"
     end
 end
 
@@ -77,15 +77,15 @@ describe "PanoramaGroup without a rendering but with an assembly" do
     end
 
     it "should not be rendered" do
-        @t.rendered?.should.be.false
+        @t.rendered?.should == false
     end
 
     it "should have an image rendered" do
-        @t.rendering.nil?.should.be.false
+        @t.rendering.nil?.should == false
     end
 
     it "should be assembled" do
-        @t.assembled?.should.be.true
+        @t.assembled?.should == true
     end
 end
 
@@ -97,14 +97,14 @@ describe "PanoramaGroup without rendering without assembly" do
     end
 
     it "should not be rendered" do
-        @t.rendered?.should.be.false
+        @t.rendered?.should == false
     end
 
     it "should have an image rendered" do
-        @t.rendering.nil?.should.be.false
+        @t.rendering.nil?.should == false
     end
 
     it "should not be assembled" do
-        @t.assembled?.should.be.false
+        @t.assembled?.should == false
     end
 end

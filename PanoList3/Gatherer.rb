@@ -24,9 +24,18 @@ class Gatherer
     
     #
     def collectAll
-        # le match date_regexp n'est pas obligatoire
-        date_regexp = Regexp.new "[0-9]{4}/[0-9]{2}/[0-9]{2}$", true
+        folders = Array.new
         Find.find(@path) do |filename|
+            folders << filename
+        end
+        inspect_folders folders
+        @current = @groups
+    end
+
+    #
+    def inspect_folders folders
+        date_regexp = Regexp.new "[0-9]{4}/[0-9]{2}/[0-9]{2}$", true
+        folders.each do |filename|
             if File.directory?(filename) and date_regexp.match filename then
                 Dir.entries(filename).each do |entry|
                     path = "#{filename}/#{entry}"
@@ -38,7 +47,6 @@ class Gatherer
                 end
             end
         end
-        @current = @groups
     end
     
     def _to_s
