@@ -6,24 +6,28 @@
 #  Copyright 2011 __MyCompanyName__. All rights reserved.
 #
 
-
 require 'find'
 
 class Gatherer
-    attr_accessor :path, :groups, :current
+    #
+    attr_accessor :path
+    #
+    attr_accessor :groups
+    #
+    attr_accessor :current
     
+    #
     def initialize(path)
         @path = path
         @groups = Array.new
     end
     
+    #
     def collectAll
         # le match date_regexp n'est pas obligatoire
         date_regexp = Regexp.new "[0-9]{4}/[0-9]{2}/[0-9]{2}$", true
-        special_dir_regexp = Regexp.new "(\.|\.\.)$"
         Find.find(@path) do |filename|
             if File.directory?(filename) and date_regexp.match filename then
-                #return if special_dir_regexp.match filename 
                 Dir.entries(filename).each do |entry|
                     path = "#{filename}/#{entry}"
                     if entry != '.' and entry != '..' and File.directory?(path) then

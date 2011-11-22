@@ -8,8 +8,15 @@
 require 'PanoList3/Gatherer'
 
 describe "Generating a new Gatherer" do
+    before do
+        @t = Gatherer.new ""
+    end
+    
     it "should return an object of class Gatherer" do
-        t = Gatherer.new ""
-        t.class.should.equal Gatherer
+        @t.class.should.equal Gatherer
+    end
+
+    it "should have an empty group array" do
+        @t.groups.length.should.equal 0
     end
 end

@@ -6,10 +6,13 @@
 #  Copyright 2011 __MyCompanyName__. All rights reserved.
 #
 
-
+#
 class Panorama
-    attr_accessor :filename, :rendering
-    
+    #
+    attr_accessor :filename
+    #
+    attr_accessor :rendering
+    #
     def initialize(filename)
         @filename = filename
         @rendering = ""

@@ -14,8 +14,14 @@ describe "Generating a new Panorama" do
         t.class.should.equal Panorama
     end
     
-    it "should have a filename" do
-        t = Panorama.new "test"
-        t.filename.should.equal "test"
+    it "should have a name based on filename" do
+        t = Panorama.new "2010/10/08/test"
+        t.filename.should.equal "2010/10/08/test"
+        t.name.should.equal "test"
+    end
+
+    it "should not be rendered immediatly" do
+      t = Panorama.new "2010/10/08/test"
+      t.rendered?.should.be.false
     end
 end

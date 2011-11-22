@@ -7,9 +7,24 @@
 #  Copyright 2011 __MyCompanyName__. All rights reserved.
 #
 
+# this class represents a folder containing panoramas
+# 
+# 
 class PanoramaGroup
-    attr_accessor :path, :panoramas, :rendering, :index, :images, :version
+    # the path to the panorama group
+    attr_accessor :path
+    # the panoramas that are contained in this group
+    attr_accessor :panoramas
+    # a filename or a list of filename for the rendering of this panorama
+    attr_accessor :rendering
+    # the current rendering used
+    attr_accessor :index
+    # a list of images in this group
+    attr_accessor :images
+    # the current version (IK)
+    attr_accessor :version
     
+    # 
     def initialize(path)
         @path = path
         @panoramas = Array.new
@@ -17,12 +32,14 @@ class PanoramaGroup
         @version = 0
     end
     
+    #
     def rendered?
         r = false
         @panoramas.each { |item| r = (r or item.rendered?) }
         return (@rendering.length != 0 or r)
     end
     
+    #
     def render_next step
         @index = 0 if @index.nil?
         @index = (@index + 1).modulo(@images.length).to_i
@@ -30,27 +47,36 @@ class PanoramaGroup
         NSLog "index : #{@index}"
     end
 
+    #
     def assembled?
         return (@panoramas.length != 0)
     end
     
+    #
     def name
         return File.basename(@path)
     end
     
+    #
     def collect
+        entries = Dir.entries(@path)
+        inspect_content entries
+        analyse_inspect
+    end
+    
+    # 
+    def inspect_content filenames
         basename = File.basename(@path)
         pto_regexp = Regexp.new "(.*)\.pto$", true
         final_regexp = Regexp.new "(#{basename}[^0-9]+.*\.(tif|jpg))$", true
-        entries = Dir.entries(@path)
-        entries.each do |entry|
+        filenames.each do |entry|
             # on regarde s'il y a des pto
             if pto_regexp.match entry then
                 base = Regexp.last_match[1]
                 p = Panorama.new("#{path}/#{entry}")
                 
                 re = Regexp.new "(#{base}.*\.(tif|jpg))$", true
-                entries.each do |entry|
+                filenames.each do |entry|
                     if re.match entry then
                         p.rendering = "#{@path}/#{Regexp.last_match[1]}"
                     end
@@ -62,7 +88,10 @@ class PanoramaGroup
                 @rendering = "#{@path}/#{Regexp.last_match[1]}"
             end
         end
-        # on vérifie qu'un rendering ne nous a pas echappé
+    end
+    
+    def analyse_inspect
+        # on v??rifie qu'un rendering ne nous a pas echapp??
         if @rendering.length == 0 then
             #@panoramas.each { |item| if item.rendered? then @rendering = item.rendering }
             rendereds = @panoramas.select{ |item| item.rendered? }
@@ -70,8 +99,7 @@ class PanoramaGroup
         end
         # s'il n'y en a pas => nothing_done
     end
-    
-    
+
     # IKImageBrowserItem - required
     def imageRepresentation
         #NSLog @rendering
