@@ -15,15 +15,21 @@
 		4385A30A1419F25B00768301 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4385A3081419F25B00768301 /* MainMenu.xib */; };
 		4385A30D1419F25B00768301 /* rb_main.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4385A30C1419F25B00768301 /* rb_main.rb */; };
 		4385A30F1419F25C00768301 /* AppDelegate.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4385A30E1419F25B00768301 /* AppDelegate.rb */; };
-		438A3A15147A743E00FBD1FD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4385A2F91419F25B00768301 /* Cocoa.framework */; };
-		438A3A1F147A743E00FBD1FD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 438A3A1D147A743E00FBD1FD /* InfoPlist.strings */; };
-		438A3A2A147A765400FBD1FD /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438A3A29147A765400FBD1FD /* MacRuby.framework */; };
-		438A3A2C147A775F00FBD1FD /* Gatherer_spec.rb in Resources */ = {isa = PBXBuildFile; fileRef = 438A3A2B147A775F00FBD1FD /* Gatherer_spec.rb */; };
 		439849D01439100F00D3BA53 /* ImageBrowserView.rb in Resources */ = {isa = PBXBuildFile; fileRef = 439849CF1439100F00D3BA53 /* ImageBrowserView.rb */; };
 		43CDE120141AB32700BEB8C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CDE11F141AB32700BEB8C6 /* AppDelegate.m */; };
 		43D49278141B5ED2004C465E /* PanoramaGroup.rb in Resources */ = {isa = PBXBuildFile; fileRef = 43D49277141B5ED2004C465E /* PanoramaGroup.rb */; };
 		43D4927B141B5EE8004C465E /* Panorama.rb in Resources */ = {isa = PBXBuildFile; fileRef = 43D4927A141B5EE8004C465E /* Panorama.rb */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		438A3A66147B1DA200FBD1FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4385A2EC1419F25B00768301 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 438A3A58147B1C7C00FBD1FD;
+			remoteInfo = "Test Unit";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4383C25F141AABBC000853EA /* Gatherer.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Gatherer.rb; sourceTree = "<group>"; };
@@ -37,15 +43,11 @@
 		4385A3091419F25B00768301 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4385A30C1419F25B00768301 /* rb_main.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = rb_main.rb; sourceTree = "<group>"; };
 		4385A30E1419F25B00768301 /* AppDelegate.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = AppDelegate.rb; sourceTree = "<group>"; };
-		438A3A12147A743E00FBD1FD /* TestPanoList3.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestPanoList3.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		438A3A17147A743E00FBD1FD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		438A3A18147A743E00FBD1FD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		438A3A19147A743E00FBD1FD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		438A3A1C147A743E00FBD1FD /* TestPanoList3-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestPanoList3-Info.plist"; sourceTree = "<group>"; };
-		438A3A1E147A743E00FBD1FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		438A3A24147A743E00FBD1FD /* TestPanoList3-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestPanoList3-Prefix.pch"; sourceTree = "<group>"; };
-		438A3A29147A765400FBD1FD /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
-		438A3A2B147A775F00FBD1FD /* Gatherer_spec.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Gatherer_spec.rb; sourceTree = "<group>"; };
+		438A3A89147B269F00FBD1FD /* Gatherer_spec.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Gatherer_spec.rb; sourceTree = "<group>"; };
+		438A3A8A147B269F00FBD1FD /* Panorama_spec.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Panorama_spec.rb; sourceTree = "<group>"; };
+		438A3A8B147B282800FBD1FD /* rb_spec.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = rb_spec.rb; sourceTree = "<group>"; };
 		439849CF1439100F00D3BA53 /* ImageBrowserView.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ImageBrowserView.rb; sourceTree = "<group>"; };
 		43CDE11E141AB32700BEB8C6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43CDE11F141AB32700BEB8C6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -63,24 +65,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		438A3A0E147A743E00FBD1FD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				438A3A2A147A765400FBD1FD /* MacRuby.framework in Frameworks */,
-				438A3A15147A743E00FBD1FD /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		4385A2EA1419F25B00768301 = {
 			isa = PBXGroup;
 			children = (
-				438A3A29147A765400FBD1FD /* MacRuby.framework */,
 				4385A2FE1419F25B00768301 /* PanoList3 */,
-				438A3A1A147A743E00FBD1FD /* TestPanoList3 */,
+				438A3A88147B263100FBD1FD /* Tests */,
 				4385A2F81419F25B00768301 /* Frameworks */,
 				4385A2F61419F25B00768301 /* Products */,
 			);
@@ -90,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				4385A2F51419F25B00768301 /* PanoList3.app */,
-				438A3A12147A743E00FBD1FD /* TestPanoList3.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,29 +144,20 @@
 			isa = PBXGroup;
 			children = (
 				438A3A17147A743E00FBD1FD /* AppKit.framework */,
-				438A3A18147A743E00FBD1FD /* CoreData.framework */,
 				438A3A19147A743E00FBD1FD /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		438A3A1A147A743E00FBD1FD /* TestPanoList3 */ = {
+		438A3A88147B263100FBD1FD /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				438A3A2B147A775F00FBD1FD /* Gatherer_spec.rb */,
-				438A3A1B147A743E00FBD1FD /* Supporting Files */,
+				438A3A89147B269F00FBD1FD /* Gatherer_spec.rb */,
+				438A3A8A147B269F00FBD1FD /* Panorama_spec.rb */,
+				438A3A8B147B282800FBD1FD /* rb_spec.rb */,
 			);
-			path = TestPanoList3;
-			sourceTree = "<group>";
-		};
-		438A3A1B147A743E00FBD1FD /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				438A3A1C147A743E00FBD1FD /* TestPanoList3-Info.plist */,
-				438A3A1D147A743E00FBD1FD /* InfoPlist.strings */,
-				438A3A24147A743E00FBD1FD /* TestPanoList3-Prefix.pch */,
-			);
-			name = "Supporting Files";
+			name = Tests;
+			path = PanoList3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +176,20 @@
 			passBuildSettingsInEnvironment = 1;
 			productName = Deployment;
 		};
+		438A3A58147B1C7C00FBD1FD /* Test Unit */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = PanoList3/rb_spec.rb;
+			buildConfigurationList = 438A3A59147B1C7C00FBD1FD /* Build configuration list for PBXLegacyTarget "Test Unit" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/local/bin/macruby;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = "Test Unit";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Test Unit";
+		};
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
@@ -208,29 +204,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				438A3A67147B1DA200FBD1FD /* PBXTargetDependency */,
 			);
 			name = PanoList3;
 			productName = PanoList3;
 			productReference = 4385A2F51419F25B00768301 /* PanoList3.app */;
 			productType = "com.apple.product-type.application";
-		};
-		438A3A11147A743E00FBD1FD /* TestPanoList3 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 438A3A27147A743E00FBD1FD /* Build configuration list for PBXNativeTarget "TestPanoList3" */;
-			buildPhases = (
-				438A3A0D147A743E00FBD1FD /* Sources */,
-				438A3A0E147A743E00FBD1FD /* Frameworks */,
-				438A3A0F147A743E00FBD1FD /* Resources */,
-				438A3A10147A743E00FBD1FD /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TestPanoList3;
-			productName = TestPanoList3;
-			productReference = 438A3A12147A743E00FBD1FD /* TestPanoList3.octest */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -254,7 +233,7 @@
 			targets = (
 				4385A2F41419F25B00768301 /* PanoList3 */,
 				4385A2FD1419F25B00768301 /* Deployment */,
-				438A3A11147A743E00FBD1FD /* TestPanoList3 */,
+				438A3A58147B1C7C00FBD1FD /* Test Unit */,
 			);
 		};
 /* End PBXProject section */
@@ -275,32 +254,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		438A3A0F147A743E00FBD1FD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				438A3A1F147A743E00FBD1FD /* InfoPlist.strings in Resources */,
-				438A3A2C147A775F00FBD1FD /* Gatherer_spec.rb in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		438A3A10147A743E00FBD1FD /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /usr/local/bin/macruby;
-			shellScript = "# Run the unit tests in this test bundle.\n# Include the Bacon libraries\nrequire \"rubygems\"\nrequire \"bacon\"\n\n# Tell MacRuby where to find our framework\nENV['DYLD_FRAMEWORK_PATH'] = ENV['BUILT_PRODUCTS_DIR']\n\n# Setup Bacon to report on tests at the end\nBacon.summary_on_exit\n\n# Load all of the *_spec test files in the test bundle\nDir.glob('./*_spec.rb').each do |test_file|\n    require test_file\nend\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4385A2F11419F25B00768301 /* Sources */ = {
@@ -312,14 +266,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		438A3A0D147A743E00FBD1FD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		438A3A67147B1DA200FBD1FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 438A3A58147B1C7C00FBD1FD /* Test Unit */;
+			targetProxy = 438A3A66147B1DA200FBD1FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4385A3011419F25B00768301 /* InfoPlist.strings */ = {
@@ -336,14 +291,6 @@
 				4385A3091419F25B00768301 /* en */,
 			);
 			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		438A3A1D147A743E00FBD1FD /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				438A3A1E147A743E00FBD1FD /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -440,27 +387,26 @@
 			};
 			name = Release;
 		};
-		438A3A25147A743E00FBD1FD /* Debug */ = {
+		438A3A5A147B1C7C00FBD1FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TestPanoList3/TestPanoList3-Prefix.pch";
-				INFOPLIST_FILE = "TestPanoList3/TestPanoList3-Info.plist";
+				DEBUGGING_SYMBOLS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
+				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
-		438A3A26147A743E00FBD1FD /* Release */ = {
+		438A3A5B147B1C7C00FBD1FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TestPanoList3/TestPanoList3-Prefix.pch";
-				INFOPLIST_FILE = "TestPanoList3/TestPanoList3-Info.plist";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
+				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};
@@ -494,13 +440,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		438A3A27147A743E00FBD1FD /* Build configuration list for PBXNativeTarget "TestPanoList3" */ = {
+		438A3A59147B1C7C00FBD1FD /* Build configuration list for PBXLegacyTarget "Test Unit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				438A3A25147A743E00FBD1FD /* Debug */,
-				438A3A26147A743E00FBD1FD /* Release */,
+				438A3A5A147B1C7C00FBD1FD /* Debug */,
+				438A3A5B147B1C7C00FBD1FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
