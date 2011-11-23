@@ -18,7 +18,7 @@ dir_path = NSBundle.mainBundle.resourcePath.fileSystemRepresentation
 
 Dir.glob(File.join(dir_path, '*.{rb,rbo}')).map { |x| File.basename(x, File.extname(x)) }.uniq.each do |path|
     if path != main and not path =~ /spec/
-        print "#{path}\n"
+        #print "#{path}\n"
         require path
     end
 end

@@ -22,4 +22,5 @@
 - (IBAction) filterNothingDone: (id) sender;
 - (IBAction) filterAll: (id) sender;
 - (IBAction) search: (id) sender;
+- (IBAction) openPreferenceWindow:(id)sender;
 @end

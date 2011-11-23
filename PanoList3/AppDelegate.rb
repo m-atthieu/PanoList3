@@ -8,9 +8,12 @@
 
 class AppDelegate
     attr_accessor :window, :searchField, :countField, :browserView, :datasource
+    attr_accessor :defaults
     
     def applicationDidFinishLaunching(a_notification)
         # Insert code here to initialize your application
+        @defaults = NSUserDefaults.standardUserDefaults
+        print @defaults
     end
     
     def refreshDataSource(path)
@@ -22,13 +25,18 @@ class AppDelegate
     end
     
     def refresh(sender)
-        self.refreshDataSource "/Volumes/Users/furai/Powo/pano"
-        NSLog g.inspect
+        source = NSUserDefaults.standardUserDefaults['source']
+        self.refreshDataSource source if source.length != 0
     end
     
     def awakeFromNib
         @browserView.setCellsStyleMask(IKCellsStyleTitled | IKCellsStyleSubtitled | IKCellsStyleShadowed)
-        self.refreshDataSource "/Volumes/Users/furai/Powo/pano"
+        source = NSUserDefaults.standardUserDefaults['source']
+        self.refreshDataSource source if source.length != 0
+    end
+    
+    def openPreferenceWindow sender
+        PreferenceWindowController.alloc.init.showWindow self
     end
     
     # filters
