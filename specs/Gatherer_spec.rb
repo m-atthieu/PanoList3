@@ -40,3 +40,36 @@ describe "Gatherer parsed 2 directories" do
         FakeFS.deactivate!
     end
 end
+
+describe "Gatherer parsed auray directory" do
+    before do
+        @t = Gatherer.new "/Volumes/Users/furai/Powo/pano"
+        FakeFS.activate!
+        FileUtils.mkdir_p "/Volumes/Users/furai/Powo/pano/2006/07/12/auray-01"
+        FileUtils.touch "/Volumes/Users/furai/Powo/pano/2006/07/12/auray-01/a.sh"
+        FileUtils.touch "/Volumes/Users/furai/Powo/pano/2006/07/12/auray-01/auray-01-autopano.pto"
+        FileUtils.touch "/Volumes/Users/furai/Powo/pano/2006/07/12/auray-01/auray-01-autopano.pto.mk"
+        FileUtils.touch "/Volumes/Users/furai/Powo/pano/2006/07/12/auray-01/auray-01-crop.exif-meta.xml"
+        FileUtils.touch "/Volumes/Users/furai/Powo/pano/2006/07/12/auray-01/auray-01.jpg"
+        FileUtils.touch "/Volumes/Users/furai/Powo/pano/2006/07/12/auray-01/auray-01.tif"
+        FileUtils.touch "/Volumes/Users/furai/Powo/pano/2006/07/12/auray-01/hpim2092.jpg"
+        FileUtils.touch "/Volumes/Users/furai/Powo/pano/2006/07/12/auray-01/hpim2093.jpg"
+        FileUtils.touch "/Volumes/Users/furai/Powo/pano/2006/07/12/auray-01/hpim2094.jpg"
+        FileUtils.touch "/Volumes/Users/furai/Powo/pano/2006/07/12/auray-01/hpim2095.jpg"
+        FileUtils.touch "/Volumes/Users/furai/Powo/pano/2006/07/12/auray-01/hpim2096.jpg"
+        @t.collectAll
+    end
+        
+    it "should have one group" do
+    	@t.groups.length.should == 1
+        print @t.groups
+    end
+    
+    it "should be rendered" do
+        @t.groups[0].rendered?.should == true
+    end
+    
+    after do
+        FakeFS.deactivate!
+    end
+end
