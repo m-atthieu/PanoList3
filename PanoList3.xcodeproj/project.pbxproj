@@ -230,7 +230,7 @@
 		4385A2EC1419F25B00768301 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0420;
 			};
 			buildConfigurationList = 4385A2EF1419F25B00768301 /* Build configuration list for PBXProject "PanoList3" */;
 			compatibilityVersion = "Xcode 3.2";

@@ -64,32 +64,24 @@ class PanoramaGroup
         analyse_inspect
     end
     
-    # 
     def inspect_content filenames
         basename = File.basename(@path)
         pto_regexp = Regexp.new "(.*)\.pto$", true
-        final_regexp = Regexp.new "(#{basename}[^0-9]+.*\.(tif|jpg))$", true
-        filenames.each do |entry|
-            # on regarde s'il y a des pto
-            if pto_regexp.match entry then
-                base = Regexp.last_match[1]
-                p = Panorama.new("#{path}/#{entry}")
-                
-                re = Regexp.new "(#{base}.*\.(tif|jpg))$", true
-                filenames.each do |entry|
-                    if re.match entry then
-                        p.rendering = "#{@path}/#{Regexp.last_match[1]}"
-                    end
-                end
+        final_regexp = Regexp.new "(#{basename}[^[0-9]{4}]*\.(tif|jpg))$", true
+        ptos = filenames.select{ |item| item =~ pto_regexp }
+        if ptos.length != 0 then
+            ptos.each do |pto|
+                p = Panorama.new("#{@path}/#{pto}")
+                p.inspect_content filenames
                 @panoramas.push p
             end
-            # on regarde s'il y a un pano finalise
-            if final_regexp.match entry then
-                @rendering = "#{@path}/#{Regexp.last_match[1]}"
-            end
+        end
+        finals = filenames.select{ |item | item =~ final_regexp }
+        if finals.length != 0 then
+            @rendering = "#{@path}/#{finals.first}"
         end
     end
-    
+
     def analyse_inspect
         # on v??rifie qu'un rendering ne nous a pas echapp??
         if @rendering.length == 0 then
