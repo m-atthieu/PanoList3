@@ -6,10 +6,16 @@
 #  Copyright 2011 __MyCompanyName__. All rights reserved.
 #
 
-class AppDelegate
+class AppDelegate < NSObject
     attr_accessor :window, :searchField, :countField, :browserView, :datasource
     attr_accessor :defaults
     
+    def initialize
+        puts "initialize"
+        defaults = { 'source' => File.join(ENV['HOME'], 'Pictures') }
+        NSUserDefaults.standardUserDefaults.registerDefaults defaults
+    end
+
     def applicationDidFinishLaunching(a_notification)
         # Insert code here to initialize your application
         @defaults = NSUserDefaults.standardUserDefaults
