@@ -11,15 +11,17 @@ require 'find'
 class Gatherer
     #
     attr_accessor :path
-    #
+    # tous les panoramas
     attr_accessor :groups
-    #
+    # la selection courante
     attr_accessor :current
-    
+    attr_accessor :pattern
+
     #
     def initialize(path)
         @path = path
         @groups = Array.new
+        @pattern = nil
     end
     
     #
@@ -48,45 +50,78 @@ class Gatherer
             end
         end
     end
-    
+
     def _to_s
         return "#{@groups.length} groups :\n#{@groups}"
     end
-    
+
     # pragma mark -
     # pragma mark filtering
+    # filter = keep => filterFinalized == keep finalized in selection
+    #               => unfilterPresent == do not keep present in selection
     def resetFilter
         @current = @groups
+        @pattern = nil
     end
-    
+
     def filterFinalized
-        @current = @groups.select{ |item| item.rendered? }
+        @current = @current + @groups.select{ |item| item.rendered? }
+        @current.uniq!
+        self.filterName unless @pattern.nil?
     end
-    
+
+    def unfilterFinalized
+        @current = @current - @groups.select{ |item| item.rendered? }
+        @current.uniq!
+        self.filterName unless @pattern.nil?
+    end
+
     def filterPresent
-        @current = @groups.select{ |item| item.assembled? and ! item.rendered? }
+        @current = @current + @groups.select{ |item| item.assembled? and ! item.rendered? }
+        @current.uniq!
+        self.filterName unless @pattern.nil?
     end
-    
+
+    def unfilterPresent
+        @current = @current - @groups.select{ |item| item.assembled? and ! item.rendered? }
+        @current.uniq!
+        self.filterName unless @pattern.nil?
+    end
+
     def filterNothing
-        @current = @groups.select{ |item| (! item.assembled?) and (! item.rendered?) }
+        @current = @current + @groups.select{ |item| (! item.assembled?) and (! item.rendered?) }
+        @current.uniq!
+        self.filterName unless @pattern.nil?
     end
-    
+
+    def unfilterNothing
+        @current = @current - @groups.select{ |item| (not item.assembled?) and (not item.rendered?) }
+        @current.uniq!
+        self.filterName unless @pattern.nil?
+    end
+
     def filterAll
         @current = @groups
     end
-    
-    def filterName pattern
-        re = Regexp.new ".*#{pattern}.*"
-        # item.name or item.path
-        @current = @groups.select{ |item| re.match item.path }
+
+    def unfilterOnName
+        re = Regexp.new ".*#{@pattern}.*"
+        @current = @current + @groups.select{ |item| not re.match item.path }
+        @current.uniq!
     end
-    
-    # pragma mark - 
-    # pragma mark IKImageBrowserDatasource - required    
+
+    def filterName # pattern
+        re = Regexp.new ".*#{@pattern}.*"
+        # item.name or item.path
+        @current = @current.select{ |item| re.match item.path }
+    end
+
+    # pragma mark -
+    # pragma mark IKImageBrowserDatasource - required
     def imageBrowser(aBrowser, itemAtIndex:  index)
         return @current[index]
     end
-    
+
     def numberOfItemsInImageBrowser(aBrowser)
         #NSLog "numberOfItemsInImageBrowser : #{@current.length}"
         return @current.length

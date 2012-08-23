@@ -8,10 +8,11 @@
 
 class AppDelegate < NSObject
     attr_accessor :window, :searchField, :countField, :browserView, :datasource
+    attr_accessor :btnFinished, :btnPresent, :btnNothing, :btnReset
     attr_accessor :defaults
     
     def initialize
-        puts "initialize"
+        # puts "initialize"
         defaults = { 'source' => File.join(ENV['HOME'], 'Pictures') }
         NSUserDefaults.standardUserDefaults.registerDefaults defaults
     end
@@ -20,6 +21,10 @@ class AppDelegate < NSObject
         # Insert code here to initialize your application
         @defaults = NSUserDefaults.standardUserDefaults
         print @defaults
+    end
+    
+    def applicationShouldTerminateAfterLastWindowClosed(theApplication)
+        true
     end
     
     def refreshDataSource(path)
@@ -45,8 +50,40 @@ class AppDelegate < NSObject
         PreferenceWindowController.alloc.init.showWindow self
     end
     
+    # filter buttons
+    def toggleFinished(sender)
+        if @btnFinished.state == NSOffState then
+            @datasource.unfilterFinalized
+            NSLog "remove finalized"
+        else
+            @datasource.filterFinalized
+            NSLog "add finalized"
+        end
+        self.reloadData
+    end
+
+    def togglePresent sender
+        NSLog "toggle present #{@btnPresent.state}"
+        if @btnPresent.state == NSOffState then
+            @datasource.unfilterPresent
+        else
+            @datasource.filterPresent
+        end
+        self.reloadData
+    end
+
+    def toggleNothing sender
+        NSLog "toggle nothing #{@btnNothing.state}"
+        if @btnNothing.state == NSOffState then
+            @datasource.unfilterNothing
+        else
+            @datasource.filterNothing
+        end
+        self.reloadData
+    end
+
     # filters
-    def filterFinalized sender
+    def filterFinalized(sender)
         @datasource.filterFinalized
         self.reloadData
     end
@@ -63,12 +100,17 @@ class AppDelegate < NSObject
     
     def filterAll(sender)
         @datasource.filterAll
+        @btnFinished.setState NSStateOn
+        @btnPresent.setState NSStateOn
+        @btnNothing.setState NSStateOn
+        @searchField.setStringValue ''
         self.reloadData
     end
     
     def search(sender)
         if(@searchField.stringValue.length != 0) then
-            @datasource.filterName @searchField.stringValue
+            @datasource.pattern = @searchField.stringValue
+            @datasource.filterName
             self.reloadData
             #NSLog("searching : #{@searchField.stringValue}")
         else

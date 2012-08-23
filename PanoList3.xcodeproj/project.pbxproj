@@ -22,18 +22,9 @@
 		43D4927B141B5EE8004C465E /* Panorama.rb in Resources */ = {isa = PBXBuildFile; fileRef = 43D4927A141B5EE8004C465E /* Panorama.rb */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		438A3A66147B1DA200FBD1FD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4385A2EC1419F25B00768301 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 438A3A58147B1C7C00FBD1FD;
-			remoteInfo = "Test Unit";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		431E8A0B15C53E820066A538 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = ../../../../Library/Frameworks/MacRuby.framework; sourceTree = "<group>"; };
+		437A399715E3D4A60043B1E8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4383C25F141AABBC000853EA /* Gatherer.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Gatherer.rb; sourceTree = "<group>"; };
 		4385A2F51419F25B00768301 /* PanoList3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanoList3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4385A2F91419F25B00768301 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -105,6 +96,7 @@
 			children = (
 				438ABC0D147C668E000A9244 /* PreferenceWindowController.rb */,
 				4385A30E1419F25B00768301 /* AppDelegate.rb */,
+				437A399715E3D4A60043B1E8 /* AppDelegate.h */,
 				439849CF1439100F00D3BA53 /* ImageBrowserView.rb */,
 				4385A3071419F25B00768301 /* Resources */,
 				4385A30B1419F25B00768301 /* Other Sources */,
@@ -209,7 +201,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				438A3A67147B1DA200FBD1FD /* PBXTargetDependency */,
 			);
 			name = PanoList3;
 			productName = PanoList3;
@@ -273,14 +264,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		438A3A67147B1DA200FBD1FD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 438A3A58147B1C7C00FBD1FD /* Test Unit */;
-			targetProxy = 438A3A66147B1DA200FBD1FD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4385A3011419F25B00768301 /* InfoPlist.strings */ = {
